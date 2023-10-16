@@ -1,0 +1,4 @@
+printer1 -t -e 1.1:tcp -h 172.20.10.11 -p 7070 -t 60000
+0: Hello World!
+1: Hello World!
+2: Hello World!

@@ -7,12 +7,11 @@ Ice.loadSlice('Printer.ice')
 import Example
 
 
-class PrinterI(Example.Printer):
-    n=0
-    def write(self, message, current=None):
-        print("{0}: {1}".format(self.n, message))
-        sys.stdout.flush()
-        self.n+=1
+class PrinterI(Example.math):
+    def add(self, a, b, current=None):
+        return print(a + b)
+    def multiply(self, a, b, current=None):
+        return a*b
 
 
 class Server(Ice.Application):

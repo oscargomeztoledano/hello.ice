@@ -2,17 +2,17 @@
 
 import sys
 import Ice
-
 Ice.loadSlice('Printer.ice')
 import Example
 
 
 class PrinterI(Example.Printer):
-    n=0
+    n = 0
+
     def write(self, message, current=None):
         print("{0}: {1}".format(self.n, message))
         sys.stdout.flush()
-        self.n+=1
+        self.n += 1
 
 
 class Server(Ice.Application):
@@ -21,7 +21,7 @@ class Server(Ice.Application):
         servant = PrinterI()
 
         adapter = broker.createObjectAdapter("PrinterAdapter")
-        proxy = adapter.add(servant, broker.stringToIdentity("printer1"))
+        proxy = adapter.addWithUUID(servant)
 
         print(proxy, flush=True)
 
