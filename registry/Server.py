@@ -11,8 +11,6 @@ class PrinterI(Example.Printer):
     n = 0
     def write(self, message, current=None):
         print("{0}: {1}".format(self.n, message))
-        # print zeroc ice version:
-        print(Ice.stringVersion())
         sys.stdout.flush()
         self.n += 1
 
@@ -26,6 +24,7 @@ class Server(Ice.Application):
         proxy = adapter.add(servant, broker.stringToIdentity("printer1"))
 
         print(proxy, flush=True)
+        print(f'ZeroC Ice version: {Ice.stringVersion()}', flush=True)
 
         adapter.activate()
         self.shutdownOnInterrupt()
