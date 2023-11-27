@@ -9,7 +9,7 @@ import Example
 class PrinterI(Example.Printer):
     n = 0
 
-    def write(self, message, current=None):
+    def write(self, message, current=None): 
         print("{0}: {1}".format(self.n, message))
         sys.stdout.flush()
         self.n += 1
