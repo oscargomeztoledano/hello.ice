@@ -46,3 +46,18 @@ con el proxy lo que hacemos es decirle que este servicio lo asocie con el adapta
 
 
 todo lo demas se entiende.
+
+
+
+
+Ha dicho que el icestrom hay que replicarlo tal cual lo tiene ella en el ejemplo.
+
+El icestorm es lo que tenemos que utilizar para los canales de eventos para comunicar los cambios del filemanager al frontend
+
+                    icestorm
+
+publisher.py                        Subscriber.py
+
+                                        #aqui tenemos los objetos de tipo printer
+                                        le decimos que va a sersubcriber a icestorm
+
