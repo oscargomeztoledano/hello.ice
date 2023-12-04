@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+SERVER ?= 1
+
 all:
 
 clean:
